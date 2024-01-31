@@ -15,6 +15,9 @@
   hand_type = ["グー","チョキ","パー"]
   my_hand = janken_type
   pc_hand = rand(0..2)
+  # 上記はじゃんけんの処理
+
+  
 
 if janken_type < 3
 
