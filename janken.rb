@@ -34,7 +34,9 @@ loop do
   if my_hand == pc_hand
     puts "あいこなので、もう一度手を選んでください"
     puts "0(グー)1(チョキ)2'(パー)3(戦わない)"
+
   else
+    
     break
   end
 end
