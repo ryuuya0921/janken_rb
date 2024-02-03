@@ -68,7 +68,8 @@ if @janken_type != 3
   else
     puts "再度じゃんけんをします"
     puts "0(グー)1(チョキ)2'(パー)3(戦わない)"
-    break
+    
+    @janken_type = nill # じゃんけんの選択をリセット
   end
 else
   puts "終了します"
