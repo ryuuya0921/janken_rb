@@ -58,14 +58,12 @@ loop do
     puts "相手：#{finger_type[yo_hand]}"
 
     puts "ーーーーーーーーーーーーーーーーーーー"
-  end
 
     if i_hand == yo_hand #勝敗が決まるまで繰り返し行う処理
-
-      break
-
-    else
-      puts "終了します"
       break
     end
+  else
+    puts "終了します"
+    break
+  end
 end
