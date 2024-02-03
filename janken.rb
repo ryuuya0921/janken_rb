@@ -41,21 +41,28 @@ end
 
 # ーーーーーあっち向いてほいの処理ーーーーーーー
 
-if @janken_type != 3 # じゃんけんの3(終了)を省いて処理をする場合
-  
+if @janken_type != 3
   puts "あっち向いて"
   puts "0(上)1(下)2(左)3(右)"
 
-  point_type = gets.to_i
+    point_type = gets.to_i
 
-  puts "ショ！"
+    puts "ショ！"
 
-  finger_type = ["上","下","左","右"]
-  i_hand = point_type
-  yo_hand = rand(0..3) #ランダムに出す
+    finger_type = ["上","下","左","右"]
+    i_hand = point_type
+    yo_hand = rand(0..3) #ランダムに出す
 
-  puts "あなた：#{finger_type[i_hand]}"
-  puts "相手：#{finger_type[yo_hand]}"
+    puts "あなた：#{finger_type[i_hand]}"
+    puts "相手：#{finger_type[yo_hand]}"
 
-  puts "ーーーーーーーーーーーーーーーーーーー"
+    puts "ーーーーーーーーーーーーーーーーーーー"
+
+    if i_hand == yo_hand #勝敗が決まるまで繰り返し行う処理
+      break
+    end
+  else
+    puts "終了します"
+    break
+  end
 end
