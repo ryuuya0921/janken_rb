@@ -75,7 +75,7 @@ loop do
       puts "あなた：#{hand_type[my_hand]}を出しました。"
       puts "相手：#{hand_type[pc_hand]}を出しました。"
       puts "ーーーーーーーーーーーーーーーーーーー"
-      break
+      next
     end
   end
 end
