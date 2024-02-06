@@ -41,7 +41,12 @@ loop do
   end
 end
 
+
 loop do
+
+  my_hand = @janken_type
+  
+
   if @janken_type != 3
     puts "あっち向いて"
     puts "0(上)1(下)2(左)3(右)"
@@ -60,7 +65,7 @@ loop do
     puts "ーーーーーーーーーーーーーーーーーーー"
 
     if i_hand == yo_hand # 勝敗が決まるまで繰り返し行う処理
-      puts "勝負あり"
+      puts "あなたの勝ちです！"
       break
     else
       puts "じゃんけんに戻ります"
@@ -70,12 +75,16 @@ loop do
       my_hand = @janken_type
       pc_hand = rand(0..2) # ランダムで出す
 
+      if my_hand == pc_hand
+        puts "あいこなので、もう一度手を選んでください"
+        puts "0(グー)1(チョキ)2'(パー)3(戦わない)"
 
-      puts "ホイ!"
-      puts "あなた：#{hand_type[my_hand]}を出しました。"
-      puts "相手：#{hand_type[pc_hand]}を出しました。"
-      puts "ーーーーーーーーーーーーーーーーーーー"
-      next
+        puts "ホイ!"
+        puts "あなた：#{hand_type[my_hand]}を出しました。"
+        puts "相手：#{hand_type[pc_hand]}を出しました。"
+        puts "ーーーーーーーーーーーーーーーーーーー"
+        next
+      end
     end
   end
 end
