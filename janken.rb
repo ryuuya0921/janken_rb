@@ -65,8 +65,9 @@ loop do
       puts "あなたの勝ちです！"
     else
       puts "あなたの負けです！"
-      break
+      
     end
+    break
   end
   puts "じゃんけんに戻ります"
   puts "0(グー)1(チョキ)2'(パー)3(戦わない)"
