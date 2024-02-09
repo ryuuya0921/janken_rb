@@ -47,12 +47,23 @@ pc_hand = rand(0..2) # ランダムで出す
 loop do
 
   if @janken_type != 3
+
+    my_hand = @janken_type
+    pc_hand = rand(0..2) # ランダムで出す
+
     puts "あっち向いて"
     puts "0(上)1(下)2(左)3(右)"
 
     point_type = gets.to_i
 
     puts "ショ！"
+    puts "ーーーーーーーーーーーーーーーーーーー"
+
+    while point_type > 3
+      puts "入力が間違っています"
+      puts "0(上)1(下)2(左)3(右)"
+      point_type = gets.to_i
+    end
 
     finger_type = ["上","下","左","右"]
     i_hand = point_type
@@ -95,6 +106,15 @@ loop do
       puts "じゃんけんに戻ります"
       puts "0(グー)1(チョキ)2'(パー)3(戦わない)"
       @janken_type = gets.to_i # もう一度じゃんけんを選択
+      puts "ホイ！"
+      puts "ーーーーーーーーーーーーーーーーーーー"
+
+      while @janken_type > 3
+        puts "入力が間違っています"
+        puts "0(グー)1(チョキ)2'(パー)3(戦わない)"
+        @janken_type = gets.chomp.to_i
+        # 他の数字を選択した場合に再度質問する
+      end
 
       puts "あなた：#{hand_type[my_hand]}を出しました。"
       puts "相手：#{hand_type[pc_hand]}を出しました。"
