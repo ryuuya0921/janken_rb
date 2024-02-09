@@ -41,11 +41,10 @@ loop do
   end
 end
 
+my_hand = @janken_type
+pc_hand = rand(0..2) # ランダムで出す
 
 loop do
-
-  my_hand = @janken_type
-  
 
   if @janken_type != 3
     puts "あっち向いて"
@@ -65,9 +64,13 @@ loop do
     puts "ーーーーーーーーーーーーーーーーーーー"
 
     if i_hand == yo_hand # 勝敗が決まるまで繰り返し行う処理
-      puts "あなたの勝ちです！"
-      break
-    else
+      
+      if @janken_type == 0 && yo_hand == 2 || @janken_type == 1 && yo_hand == 0 || @janken_type == 2 && yo_hand == 1
+        puts "あなたの勝ちです！"
+      else
+        puts "あなたの負けです！"
+        break
+      end
       puts "じゃんけんに戻ります"
       puts "0(グー)1(チョキ)2'(パー)3(戦わない)"
       @janken_type = gets.to_i # もう一度じゃんけんを選択
@@ -75,16 +78,28 @@ loop do
       my_hand = @janken_type
       pc_hand = rand(0..2) # ランダムで出す
 
+      puts "ホイ!"
+      puts "あなた：#{hand_type[my_hand]}を出しました。"
+      puts "相手：#{hand_type[pc_hand]}を出しました。"
+      puts "ーーーーーーーーーーーーーーーーーーー"
+
       if my_hand == pc_hand
         puts "あいこなので、もう一度手を選んでください"
         puts "0(グー)1(チョキ)2'(パー)3(戦わない)"
-
-        puts "ホイ!"
-        puts "あなた：#{hand_type[my_hand]}を出しました。"
-        puts "相手：#{hand_type[pc_hand]}を出しました。"
-        puts "ーーーーーーーーーーーーーーーーーーー"
         next
+      else
+        break
       end
+
+    else
+      puts "じゃんけんに戻ります"
+      puts "0(グー)1(チョキ)2'(パー)3(戦わない)"
+      @janken_type = gets.to_i # もう一度じゃんけんを選択
+
+      puts "あなた：#{hand_type[my_hand]}を出しました。"
+      puts "相手：#{hand_type[pc_hand]}を出しました。"
+      puts "ーーーーーーーーーーーーーーーーーーー"
+      next
     end
   end
 end
